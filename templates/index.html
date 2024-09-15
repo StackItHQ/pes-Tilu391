@@ -1,0 +1,38 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <div class="container mt-4">
+        <h1>Inventory Management</h1>
+
+        <div class="mb-3">
+            <a href="{{ url_for('add_item') }}" class="btn btn-primary">Add Item</a>
+            <a href="{{ url_for('add_user') }}" class="btn btn-info">Add User</a>
+            <a href="{{ url_for('add_staff') }}" class="btn btn-success">Add Staff</a>
+            <a href="{{ url_for('sync_from_google_sheets', direction='to_mysql') }}" class="btn btn-secondary">Sync All Data to MySQL</a>
+            <a href="{{ url_for('sync_from_google_sheets', direction='to_google_sheets') }}" class="btn btn-secondary">Sync All Data to Google Sheets</a>
+
+        </div>
+
+        <h2 class="mt-4">Products</h2>
+        <table class="table table-bordered mt-2">
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Quantity</th>
+                    <th>Description</th>
+                    <th>Last Updated</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for product in products %}
+                    <tr>
+                        <td>{{ product[0] }}</td>
+                        <td>{{ product[1] }}</td>
+                        <td>{{ product[2] }}</td>
+                        <td>{{ product[3] }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

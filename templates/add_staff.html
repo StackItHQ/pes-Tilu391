@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Staff</title>
+</head>
+<body>
+    <h1>Add Staff</h1>
+    <form method="POST">
+        <label for="username">Username:</label>
+        <input type="text" name="username" required><br>
+        
+        <label for="position">Position:</label>
+        <input type="text" name="position" required><br>
+        
+        <label for="salary">Salary:</label>
+        <input type="text" name="salary" required><br>
+        
+        <input type="submit" value="Add Staff">
+    </form>
+    <a href="{{ url_for('index') }}">Back to Home</a>
+</body>
+</html>
