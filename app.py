@@ -15,16 +15,16 @@ app = Flask(__name__)
 app.secret_key = 'supersecretkey'  # Set a secret key for sessions and flash messages
 
 SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
-SERVICE_ACCOUNT_FILE = 'D:\\summer\\inventory\\credentials\\stocksyncproject-435616-a84dd491bcec.json'
+SERVICE_ACCOUNT_FILE = 'path_to_json_file.json'
 
 # Update these with your actual Google Sheet IDs and range names
-SPREADSHEET_ID_PRODUCTS = '1w06CJtnA6MmRbogZ3XArQ0CmFml_KvdVr3S9_9coZxY'
+SPREADSHEET_ID_PRODUCTS = 'spreadsheetid'
 RANGE_NAME_PRODUCTS = 'Sheet1!A:D'  # Ensure this range is correct
 
-SPREADSHEET_ID_USERS = '1w06CJtnA6MmRbogZ3XArQ0CmFml_KvdVr3S9_9coZxY'
+SPREADSHEET_ID_USERS = 'spread_sheet_id'
 RANGE_NAME_USERS = 'Sheet2!A:C'  # Ensure this range is correct
 
-SPREADSHEET_ID_STAFF = '1w06CJtnA6MmRbogZ3XArQ0CmFml_KvdVr3S9_9coZxY'
+SPREADSHEET_ID_STAFF = 'spread_sheet_id'
 RANGE_NAME_STAFF = 'Sheet3!A:D'  # Ensure this range is correct
 
 logging.basicConfig(level=logging.INFO)
@@ -34,7 +34,7 @@ def get_db_connection():
     return mysql.connector.connect(
         host="localhost",
         user="root",
-        password="TilakMRT@391",  # Update this with your MySQL password
+        password="your_password",  # Update this with your MySQL password
         database="inventory_db"  # Update this with your MySQL database name
     )
 
